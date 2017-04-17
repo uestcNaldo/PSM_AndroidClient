@@ -87,7 +87,8 @@ public class OwnerLoginActivity extends AppCompatActivity implements LoaderCallb
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(OwnerLoginActivity.this, OwnerMainActivity.class);
+                startActivity(intent);
                 //attemptLogin();
             }
         });

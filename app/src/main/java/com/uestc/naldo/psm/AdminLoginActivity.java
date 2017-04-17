@@ -87,7 +87,9 @@ public class AdminLoginActivity extends AppCompatActivity implements LoaderCallb
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+
+
+                //attemptLogin();
             }
         });
 

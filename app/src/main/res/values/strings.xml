@@ -23,5 +23,13 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="title_activity_trainer_login">训练师登录</string>
     <string name="title_activity_admin_login">管理员登录</string>
+    <string name="title_activity_owner_main">宠物主人管理主页</string>
+    <string name="title_pet">宠物</string>
+    <string name="title_school">学校</string>
+    <string name="title_information">信息</string>
+    <string name="title_activity_trainer_main">TrainerMainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
