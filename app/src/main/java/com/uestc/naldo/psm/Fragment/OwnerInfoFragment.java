@@ -1,4 +1,4 @@
-package com.uestc.naldo.psm;
+package com.uestc.naldo.psm.Fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -7,18 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.uestc.naldo.psm.R;
+
 /**
  * Created by Naldo on 2017/4/17.
  */
 
-public class OwnerPetFragment extends Fragment {
-
-    @Nullable
+public class OwnerInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        View view = LayoutInflater.from(getActivity()).inflate(R.layout.owner_pet_fragment, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_owner_information, container, false);
     }
-
 }

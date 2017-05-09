@@ -16,7 +16,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SelectCharacterActivity"
-            android:label="@string/select_character_title">
+            android:label="@string/select_character_title"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".OwnerLoginActivity"
+            android:name=".LoginActivity.OwnerLoginActivity"
             android:label="@string/owner_login_title"
             android:parentActivityName=".SelectCharacterActivity">
             <meta-data
@@ -32,7 +33,7 @@
                 android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".TrainerLoginActivity"
+            android:name=".LoginActivity.TrainerLoginActivity"
             android:label="@string/title_activity_trainer_login"
             android:parentActivityName=".SelectCharacterActivity">
             <meta-data
@@ -40,7 +41,7 @@
                 android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".AdminLoginActivity"
+            android:name=".LoginActivity.AdminLoginActivity"
             android:label="@string/title_activity_admin_login"
             android:parentActivityName=".SelectCharacterActivity">
             <meta-data
@@ -48,11 +49,15 @@
                 android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".OwnerMainActivity"
-            android:label="@string/title_activity_owner_main" />
+            android:name=".MainActivity.OwnerMainActivity"
+            android:label="@string/title_activity_owner_main"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-            android:name=".TrainerMainActivity"
+            android:name=".MainActivity.TrainerMainActivity"
             android:label="@string/title_activity_trainer_main"></activity>
+        <activity
+            android:name=".MainActivity.AdminMainActivity"
+            android:label="@string/title_activity_admin_main"></activity>
     </application>
 
 </manifest>

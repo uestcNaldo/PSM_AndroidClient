@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.uestc.naldo.psm.LoginActivity.AdminLoginActivity;
+import com.uestc.naldo.psm.LoginActivity.OwnerLoginActivity;
+import com.uestc.naldo.psm.LoginActivity.TrainerLoginActivity;
+
 public class SelectCharacterActivity extends AppCompatActivity {
 
 
