@@ -6,5 +6,20 @@
     <color name="colorBackground">#c75817</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorWindowBackground">#EEEEEE</color>
+    <color name="colorWindowBackground">#dddddd</color>
+
+    <color name="colorPetItemName">#03A9F4</color>
+    <color name="colorNotifiItemTitle">#03A9F4</color>
+    <color name="colorCourseName">#03A9F4</color>
+    <color name="colorTrainerName">#03A9F4</color>
+
+
+    <color name="colorCardImg">#16acf2</color>
+    <color name="colorGray">#E0E0E0</color>
+    <color name="colorOrange">#FFFF9800</color>
+    <color name="colorRed">#F44336</color>
+    <color name="colorRed2">#FF1744</color>
+    <color name="colorText">#424242</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>

@@ -5,6 +5,14 @@
     <string name="select_character_title">宠物学校管理演示</string>
     <string name="owner_login_title">宠物主人登录注册</string>
 
+    <string name="title_owner_pet">宠物</string>
+    <string name="title_owner_school">学校</string>
+    <string name="title_school_name">四川家宝宠物服务学校</string>
+    <string name="title_course_list">课程信息</string>
+    <string name="title_trainer_list">训练师信息</string>
+
+    <string name="school_name">四川家宝宠物服务有限公司</string>
+    <string name="title_info">个人</string>
     <!-- Strings of Select Button -->
     <string name="select_owner_button">宠物主人</string>
     <string name="select_trainer_button">训练师</string>
@@ -30,11 +38,262 @@
     <string name="title_activity_trainer_main">TrainerMainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">通知</string>
+    <string name="title_notification">通知</string>
     <string name="prompt_username">用户名</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_admin_main">AdminMainActivity</string>
+    <string name="menu_add">添加</string>
+    <string name="menu_refresh">刷新</string>
+
+
+    <string name="item_pet_lable_age">年龄：</string>
+    <string name="item_pet_lable_sex">性别：</string>
+    <string name="item_pet_lable_species">种类：</string>
+
+    <string name="lable_pet_detail_name">名字</string>
+    <string name="lable_pet_detail_age">年龄</string>
+    <string name="lable_pet_detail_sex">性别</string>
+    <string name="lable_pet_detail_species">种类</string>
+
+    <string name="lable_pet_detail_start">入学时间</string>
+    <string name="lable_pet_detail_end">毕业时间</string>
+    <string name="lable_pet_detail_course">课程</string>
+
+    <string name="lable_course_detail_inst">训练说明</string>
+    <string name="lable_course_detail_condition">入学条件</string>
+    <string name="lable_course_detail_duration">训练周期</string>
+
+    <string name="lable_course_detail_content">课程内容</string>
+    <string name="lable_course_detail_prise">费用</string>
+    <string name="lable_course_detail_note">备注</string>
+
+    <string name="lable_school_contact">联系人</string>
+    <string name="lable_school_phone">电话</string>
+    <string name="lable_school_address">地址</string>
+
+    <string name="lable_trainer_detail_name">姓名</string>
+    <string name="lable_trainer_detail_age">年龄</string>
+    <string name="lable_trainer_detail_sex">性别</string>
+    <string name="lable_trainer_detail_email">邮箱</string>
+
+    <string name="lable_trainer_detail_position">职位</string>
+    <string name="lable_trainer_detail_maxim">格言</string>
+    <string name="lable_trainer_detail_intro">介绍</string>
+
+    <string name="value_school_contact">范小姐</string>
+    <string name="value_school_phone">18224449240</string>
+    <string name="value_school_address">成都市双流县彭镇福田村3组28号</string>
+
+
+    <string name="lable_pet_hr">健康状况</string>
+
+    <string name="card_title_school">学校简介</string>
+    <string name="card_title_school_calendar">校历</string>
+    <string name="card_title_school_detail">校园风采</string>
+
+    <string name="school_detail_subtitle_1">学校简介</string>
+    <string name="school_detail_subtitle_2">联系方式</string>
+
+    <string name="card_title_course">训练课程</string>
+    <string name="card_title_pet">宠物信息</string>
+    <string name="card_title_trainer">训练师信息</string>
+
+    <string name="pet_hr_modify">健康状况信息修改</string>
+    <string name="pet_hr_modify_title_confirm">确定修改</string>
+
+    <string name="info_char_default">用户名</string>
+    <string name="info_char_owner">宠物主人</string>
+    <string name="info_char_trainer">训练师</string>
+    <string name="info_char_admin">管理员</string>
+
+    <string name="info_owner_feedback">反馈</string>
+    <string name="info_refresh">更新信息</string>
+    <string name="info_exit">退出</string>
+    <string name="info_attendance">考勤信息</string>
+
+    <string name="course_item_name_lable">课程名称</string>
+    <string name="course_item_duration_lable">训练周期：</string>
+
+    <string name="notifi_item_lable_date">日期：</string>
+    <string name="notifi_item_lable_admin">管理员：</string>
+
+    <string name="item_trainer_lable_position">职位：</string>
+    <string name="item_trainer_lable_age">性别：</string>
+
+    <string name="title_activity_pet_owner">PetOwnerActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+
+    <string name="value_pet_default_name">狗狗</string>
+    <string name="value_pet_default_age">2</string>
+    <string name="value_pet_default_sex">公</string>
+    <string name="value_pet_default_species">金毛</string>
+
+    <string name="value_pet_default_start">2017-1-1</string>
+    <string name="value_pet_default_end">2017-2-1</string>
+    <string name="value_pet_default_course">启蒙教育</string>
+
+    <string name="value_trainer_default_name">训犬师1</string>
+    <string name="value_trainer_default_age">20</string>
+    <string name="value_trainer_default_sex">男</string>
+    <string name="value_trainer_default_email">1234567890@example.com</string>
+
+    <string name="value_trainer_default_position">训犬师</string>
+    <string name="value_trainer_default_maxim">格言</string>
+    <string name="value_trainer_default_intro">自我介绍</string>
+
+    <string name="tab_title_0">专业训犬</string>
+    <string name="tab_title_1">团队风采</string>
+    <string name="tab_title_2">学校环境</string>
+
+    <string name="value_course_inst">"Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"</string>
+    <string name="value_course_condition">"Surfaces and edges of the material provide visual cues that are grounded in reality. The "</string>
+    <string name="value_course_duration">启蒙教育</string>
+
+    <string name="value_course_content">2017-1-1</string>
+    <string name="value_course_prise">2017-2-1</string>
+    <string name="value_course_note">"world, without breaking the rules of physics.\n"</string>
+
+    <string name="value_pet_default_hr">良好</string>
+
+    <string name="button_delete_text">删除</string>
+
+    <string name="title_dialog_select_pet">选择并添加宠物</string>
+    <string name="button_ok">确定</string>
+    <string name="button_cancel">取消</string>
+
+    <string-array name="petlistExample">
+        <item>狗狗1</item>
+        <item>狗狗2</item>
+        <item>狗狗3</item>
+        <item>狗狗4</item>
+        <item>狗狗5</item>
+        <item>狗狗6</item>
+    </string-array>
+    <string name="title_activity_notification_detail">NotificationDetailActivity</string>
+    <string name="title_activity_school_detail">SchoolDetailActivity</string>
+
+    <string name="text_school_content">"    成都家宝训犬基地成立于2012年是成都市犬业协会理事单位、成都市犬业协会训犬师培训基地，隶属于四川家宝宠物服务有限公司。\n\n"
+        "主营成都训犬、宠物寄养、工作犬安防、宠物犬表演、影视犬拍摄、名犬出售、竞技犬训练。基地占地面积9000余平，专业训犬员及管理员超过15人，训犬基地负责人唐先生从事训犬行业8年多，经验丰富，技术独到。\n\n"
+        "本基地位于成都市双流县彭镇，交通方便。训犬技术专业，犬舍环境干净。是一所专业的训犬、宠物寄养中心。采用国际上一流的训犬方法合程教学，使用柔软，人性化的训练方式。\n\n"
+        "唐科\n"
+        "首席训犬师 校长\n"
+        "训犬格言：不论财富有多少，拥有一条训练有素的犬你会更富有。\n"
+        "   毕业于四川师范大学并在四川省公安厅警犬基地进行深造学习并取得了优异成绩，从事宠物犬训练、工作犬训犬、竞技犬专业训练8年，在成都训犬界颇具影响，参加多次国外训犬师训犬课程培训，学习了比利时训犬教父巴顿贝伦，世界训犬大师YOGIZANK、美国训犬大师米奇、德国三大训犬大师之一fushs老师的正向训犬课程，并邀请世界冠军Ronny老师来我校授课讲述先进的训犬知识，使中外训犬技术完美结合。拥有自己独到的训犬方式，曾多次受邀参加犬类表演的大型活动，并多次担任大型犬类展会宠物表演员，曾多次配合武装巡逻队和安防公司搜捕、追踪、安检工作。擅长高级服从、护卫、敏捷、工作犬训练。"
+    </string>
+
+    <string name="item_trainer_name">训练师</string>
+    <string name="title_activity_school_style">SchoolStyleActivity</string>
+    <string name="title_activity_course_list">CourseListActivity</string>
+    <string name="title_activity_course">CourseActivity</string>
+    <string name="title_activity_trainer_list">TrainerListActivity</string>
+    <string name="title_activity_trainer">TrainerActivity</string>
+    <string name="title_activity_pet_owner_list">PetOwnerListActivity</string>
+    <string name="title_activity_pet_trainer_list">PetTrainerListActivity</string>
+    <string name="title_activity_pet_trainer">PetTrainerActivity</string>
+    <string name="title_activity_pet_hrmodify">PetHRModifyActivity</string>
+    <string name="title_activity_notification_commit">NotificationCommitActivity</string>
+    <string name="title_activity_owner_feedback_commit">OwnerFeedbackCommitActivity</string>
+    <string name="title_activity_attendance_trainer_list">AttendanceTrainerListActivity</string>
+    <string name="title_activity_attendance_record">AttendanceRecordActivity</string>
+    <string name="title_activity_attendance_detail">AttendanceDetailActivity</string>
 
 </resources>

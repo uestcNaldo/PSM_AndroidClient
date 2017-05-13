@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.uestc.naldo.psm.LoginActivity.OwnerLoginActivity"
+    tools:context=".activity.LoginActivity.OwnerLoginActivity"
     android:orientation="vertical">
 
     <!-- Login progress -->
@@ -66,6 +66,13 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/remember_pass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="记住密码"/>
+
             <Button
                 android:id="@+id/owner_sign_in_button"
                 style="?android:textAppearanceSmall"
@@ -75,14 +82,14 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/owner_register_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_register"
-                android:textStyle="bold"/>
+            <!--<Button-->
+                <!--android:id="@+id/owner_register_button"-->
+                <!--style="?android:textAppearanceSmall"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:text="@string/action_register"-->
+                <!--android:textStyle="bold"/>-->
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

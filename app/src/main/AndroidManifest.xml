@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uestc.naldo.psm">
 
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,9 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SelectCharacterActivity"
+            android:name=".activity.SelectCharacterActivity"
             android:label="@string/select_character_title"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppThemeNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,39 +26,112 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity.OwnerLoginActivity"
+            android:name=".activity.LoginActivity.OwnerLoginActivity"
             android:label="@string/owner_login_title"
-            android:parentActivityName=".SelectCharacterActivity">
+            android:parentActivityName=".activity.SelectCharacterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
+                android:value="com.uestc.naldo.psm.activity.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".LoginActivity.TrainerLoginActivity"
+            android:name=".activity.LoginActivity.TrainerLoginActivity"
             android:label="@string/title_activity_trainer_login"
-            android:parentActivityName=".SelectCharacterActivity">
+            android:parentActivityName=".activity.SelectCharacterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
+                android:value="com.uestc.naldo.psm.activity.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".LoginActivity.AdminLoginActivity"
+            android:name=".activity.LoginActivity.AdminLoginActivity"
             android:label="@string/title_activity_admin_login"
-            android:parentActivityName=".SelectCharacterActivity">
+            android:parentActivityName=".activity.SelectCharacterActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.uestc.naldo.psm.SelectCharacterActivity" />
+                android:value="com.uestc.naldo.psm.activity.SelectCharacterActivity" />
         </activity>
         <activity
-            android:name=".MainActivity.OwnerMainActivity"
-            android:label="@string/title_activity_owner_main"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:name=".activity.MainActivity.OwnerMainActivity"
+            android:label="@string/title_owner_pet"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".MainActivity.TrainerMainActivity"
-            android:label="@string/title_activity_trainer_main"></activity>
+            android:name=".activity.MainActivity.TrainerMainActivity"
+            android:label="@string/title_activity_trainer_main"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
-            android:name=".MainActivity.AdminMainActivity"
-            android:label="@string/title_activity_admin_main"></activity>
+            android:name=".activity.MainActivity.AdminMainActivity"
+            android:label="@string/title_activity_admin_main"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.ItemActivity.PetOwnerActivity"
+            android:label="@string/title_activity_pet_owner"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.NotificationDetailActivity"
+            android:label="@string/title_activity_notification_detail"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.SchoolDetailActivity"
+            android:label="@string/title_activity_school_detail"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.SchoolStyleActivity"
+            android:label="@string/title_activity_school_style"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.CourseListActivity"
+            android:label="@string/title_activity_course_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.ItemActivity.CourseActivity"
+            android:label="@string/title_activity_course"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.TrainerListActivity"
+            android:label="@string/title_activity_trainer_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.ItemActivity.TrainerActivity"
+            android:label="@string/title_activity_trainer"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.PetOwnerListActivity"
+            android:label="@string/title_activity_pet_owner_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.PetTrainerListActivity"
+            android:label="@string/title_activity_pet_trainer_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.ItemActivity.PetTrainerActivity"
+            android:label="@string/title_activity_pet_trainer"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.CommitActivity.PetHRModifyActivity"
+            android:label="@string/title_activity_pet_hrmodify"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.CommitActivity.NotificationCommitActivity"
+            android:label="@string/title_activity_notification_commit"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.CommitActivity.OwnerFeedbackCommitActivity"
+            android:label="@string/title_activity_owner_feedback_commit"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.AttendanceTrainerListActivity"
+            android:label="@string/title_activity_attendance_trainer_list"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.CommitActivity.AttendanceRecordActivity"
+            android:label="@string/title_activity_attendance_record"
+            android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".activity.DetailActivity.AttendanceDetailActivity"
+            android:label="@string/title_activity_attendance_detail"
+            android:theme="@style/AppThemeNoActionBar"></activity>
     </application>
 
 </manifest>

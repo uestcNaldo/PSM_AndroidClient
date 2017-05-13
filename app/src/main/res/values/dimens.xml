@@ -5,4 +5,89 @@
     <dimen name="select_button_size">45sp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
+
+    <dimen name="bottomNavigationView_elevation">4dp</dimen>
+    <dimen name="title_main_elevation">4dp</dimen>
+
+    <dimen name="title_padding">5dp</dimen>
+    <dimen name="title_textSize">24sp</dimen>
+
+    <dimen name="fab_add_margin">16dp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+
+    <dimen name="item_pet_margin">5dp</dimen>
+    <dimen name="item_pet_name_size">24sp</dimen>
+    <dimen name="item_pet_other_size">16sp</dimen>
+
+    <dimen name="cardview_item_elevation">4dp</dimen>
+    <dimen name="item_cardview_margin">5dp</dimen>
+    <dimen name="gridlayout_margin">5dp</dimen>
+
+    <dimen name="item_style_text_margin">5dp</dimen>
+
+    <dimen name="layout_item_info">15dp</dimen>
+    <dimen name="img_info">8dp</dimen>
+    <dimen name="layout_item_padding">10dp</dimen>
+    <dimen name="info_name_size">20sp</dimen>
+    <dimen name="info_item_margin">10dp</dimen>
+    <dimen name="info_item_name_size">16sp</dimen>
+
+    <dimen name="notifi_item_margin_LR">5dp</dimen>
+    <dimen name="notifi_item_margin_Top">15dp</dimen>
+    <dimen name="notifi_item_paddingTop">20dp</dimen>
+    <dimen name="notifi_item_paddingLR">10dp</dimen>
+
+    <dimen name="trainer_item_margin_LR">5dp</dimen>
+    <dimen name="trainer_item_margin_Top">10dp</dimen>
+    <dimen name="trainer_item_paddingTop">15dp</dimen>
+    <dimen name="trainer_item_paddingLR">10dp</dimen>
+
+    <dimen name="course_item_margin_LR">5dp</dimen>
+    <dimen name="course_item_margin_Top">15dp</dimen>
+    <dimen name="course_item_paddingTop">20dp</dimen>
+    <dimen name="course_item_paddingLR">10dp</dimen>
+
+    <dimen name="notifi_detail_content_padding">10dp</dimen>
+    <dimen name="notifi_detail_content_margin">10dp</dimen>
+    <dimen name="notifi_detail_content_text_size">16sp</dimen>
+
+    <dimen name="notifi_item_title_size">35sp</dimen>
+    <dimen name="notifi_item_other_size">16sp</dimen>
+
+    <dimen name="course_item_name_size">35sp</dimen>
+    <dimen name="course_item_other_size">16sp</dimen>
+
+    <dimen name="trainer_item_name_size">35sp</dimen>
+    <dimen name="trainer_item_other_size">16sp</dimen>
+
+    <dimen name="app_bar_pet_height">180dp</dimen>
+    <dimen name="app_bar_notifi_height">150dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="item_detail_content_marginTop">30dp</dimen>
+    <dimen name="item_school_content_marginTop">10dp</dimen>
+    <dimen name="pet_detail_content_item_marginTop">15dp</dimen>
+    <dimen name="divider_detail_content_item_padding">10dp</dimen>
+    <dimen name="pet_detail_lable_size">20sp</dimen>
+    <dimen name="pet_detail_value_size">18sp</dimen>
+
+    <dimen name="trainer_detail_lable_size">20sp</dimen>
+    <dimen name="trainer_detail_value_size">18sp</dimen>
+
+    <dimen name="course_detail_lable_size">20sp</dimen>
+
+    <dimen name="button_delete_marginLR">30dp</dimen>
+    <dimen name="button_elevation">2dp</dimen>
+
+    <dimen name="cardview_corner_radius">4dp</dimen>
+    <dimen name="app_bar_school_height">120dp</dimen>
+
+    <dimen name="text_school_content_size">18sp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <dimen name="text_style_name_size">16sp</dimen>
+    <dimen name="app_bar_course_height">180dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="app_bar_trainer_height">300dp</dimen>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.uestc.naldo.psm.MainActivity.AdminMainActivity">
+    tools:context=".activity.MainActivity.AdminMainActivity">
 
     <FrameLayout
         android:id="@+id/admin_main_container"
@@ -21,9 +21,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
-        app:menu="@menu/admin_main_navigation"
-        app:itemIconTint="#FFFFFF"
-        app:itemTextColor="#FFFFFF"
-        app:itemBackground="@color/colorPrimary"/>
+        app:menu="@menu/navigation_admin_main"
+        app:itemIconTint="@color/colorWhite"
+        app:itemTextColor="@color/colorWhite"
+        app:itemBackground="@color/colorPrimary"
+        android:elevation="@dimen/bottomNavigationView_elevation"/>
 
 </LinearLayout>
