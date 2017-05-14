@@ -2,36 +2,39 @@ package com.uestc.naldo.psm.model;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.ToMany;
 
-import java.util.List;
+import java.util.Date;
 import org.greenrobot.greendao.annotation.Generated;
 
+
 /**
- * Created by Naldo on 2017/5/11.
+ * Created by Naldo on 2017/5/14.
  */
 @Entity
-public class Notification {
+public class Feedback {
     @Id
     private long id;
+
     private String title;
+
     private String content;
-    private String datetime;
 
-    private long adminId;
+    private Date date;
 
-    @Generated(hash = 924305390)
-    public Notification(long id, String title, String content, String datetime,
-            long adminId) {
+    private long ownerId;
+
+    @Generated(hash = 442274122)
+    public Feedback(long id, String title, String content, Date date,
+            long ownerId) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.datetime = datetime;
-        this.adminId = adminId;
+        this.date = date;
+        this.ownerId = ownerId;
     }
 
-    @Generated(hash = 1855225820)
-    public Notification() {
+    @Generated(hash = 802671868)
+    public Feedback() {
     }
 
     public long getId() {
@@ -58,21 +61,20 @@ public class Notification {
         this.content = content;
     }
 
-    public String getDatetime() {
-        return this.datetime;
+    public Date getDate() {
+        return this.date;
     }
 
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public long getAdminId() {
-        return this.adminId;
+    public long getOwnerId() {
+        return this.ownerId;
     }
 
-    public void setAdminId(long adminId) {
-        this.adminId = adminId;
+    public void setOwnerId(long ownerId) {
+        this.ownerId = ownerId;
     }
-
 
 }

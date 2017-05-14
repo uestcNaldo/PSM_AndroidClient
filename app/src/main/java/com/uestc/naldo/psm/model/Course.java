@@ -4,62 +4,52 @@ import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.ToMany;
-import org.greenrobot.greendao.annotation.Unique;
 
 import java.util.List;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
 import com.uestc.naldo.psm.dao.DaoSession;
-import com.uestc.naldo.psm.dao.AttendanceDao;
-import com.uestc.naldo.psm.dao.TrainerDao;
+import com.uestc.naldo.psm.dao.PetDao;
+import com.uestc.naldo.psm.dao.CourseDao;
 
 /**
- * Created by Naldo on 2017/5/11.
+ * Created by Naldo on 2017/5/14.
  */
 @Entity
-public class Trainer {
+public class Course {
     @Id
     private long id;
-    @Unique
-    private String username;
-    private String password;
     @NotNull
     private String name;
-    private int age;
-    private String sex;
+    private String condition;
+    private String duration;
+    private String content;
+    private String prise;
+    private String note;
 
-    private String email;
-    private String position;
-    private String maxim;
-    private String intro;
-
-    @ToMany(referencedJoinProperty = "trainerId")
-    List<Attendance> attendances;
+    @ToMany(referencedJoinProperty = "courseId")
+    List<Pet> pets;
     /** Used to resolve relations */
     @Generated(hash = 2040040024)
     private transient DaoSession daoSession;
     /** Used for active entity operations. */
-    @Generated(hash = 1424165122)
-    private transient TrainerDao myDao;
+    @Generated(hash = 2063667503)
+    private transient CourseDao myDao;
 
-    @Generated(hash = 1329791917)
-    public Trainer(long id, String username, String password, @NotNull String name,
-            int age, String sex, String email, String position, String maxim,
-            String intro) {
+    @Generated(hash = 1127809439)
+    public Course(long id, @NotNull String name, String condition, String duration,
+            String content, String prise, String note) {
         this.id = id;
-        this.username = username;
-        this.password = password;
         this.name = name;
-        this.age = age;
-        this.sex = sex;
-        this.email = email;
-        this.position = position;
-        this.maxim = maxim;
-        this.intro = intro;
+        this.condition = condition;
+        this.duration = duration;
+        this.content = content;
+        this.prise = prise;
+        this.note = note;
     }
 
-    @Generated(hash = 140720620)
-    public Trainer() {
+    @Generated(hash = 1355838961)
+    public Course() {
     }
 
     public long getId() {
@@ -70,22 +60,6 @@ public class Trainer {
         this.id = id;
     }
 
-    public String getUsername() {
-        return this.username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -94,81 +68,72 @@ public class Trainer {
         this.name = name;
     }
 
-    public int getAge() {
-        return this.age;
+    public String getCondition() {
+        return this.condition;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
-    public String getSex() {
-        return this.sex;
+    public String getDuration() {
+        return this.duration;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
-    public String getEmail() {
-        return this.email;
+    public String getContent() {
+        return this.content;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public String getPosition() {
-        return this.position;
+    public String getPrise() {
+        return this.prise;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setPrise(String prise) {
+        this.prise = prise;
     }
 
-    public String getMaxim() {
-        return this.maxim;
+    public String getNote() {
+        return this.note;
     }
 
-    public void setMaxim(String maxim) {
-        this.maxim = maxim;
-    }
-
-    public String getIntro() {
-        return this.intro;
-    }
-
-    public void setIntro(String intro) {
-        this.intro = intro;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     /**
      * To-many relationship, resolved on first access (and after reset).
      * Changes to to-many relations are not persisted, make changes to the target entity.
      */
-    @Generated(hash = 2016681418)
-    public List<Attendance> getAttendances() {
-        if (attendances == null) {
+    @Generated(hash = 1647453670)
+    public List<Pet> getPets() {
+        if (pets == null) {
             final DaoSession daoSession = this.daoSession;
             if (daoSession == null) {
                 throw new DaoException("Entity is detached from DAO context");
             }
-            AttendanceDao targetDao = daoSession.getAttendanceDao();
-            List<Attendance> attendancesNew = targetDao
-                    ._queryTrainer_Attendances(id);
+            PetDao targetDao = daoSession.getPetDao();
+            List<Pet> petsNew = targetDao._queryCourse_Pets(id);
             synchronized (this) {
-                if (attendances == null) {
-                    attendances = attendancesNew;
+                if (pets == null) {
+                    pets = petsNew;
                 }
             }
         }
-        return attendances;
+        return pets;
     }
 
     /** Resets a to-many relationship, making the next get call to query for a fresh result. */
-    @Generated(hash = 1149626379)
-    public synchronized void resetAttendances() {
-        attendances = null;
+    @Generated(hash = 1767632067)
+    public synchronized void resetPets() {
+        pets = null;
     }
 
     /**
@@ -208,10 +173,10 @@ public class Trainer {
     }
 
     /** called by internal mechanisms, do not call yourself. */
-    @Generated(hash = 2117226759)
+    @Generated(hash = 94420068)
     public void __setDaoSession(DaoSession daoSession) {
         this.daoSession = daoSession;
-        myDao = daoSession != null ? daoSession.getTrainerDao() : null;
+        myDao = daoSession != null ? daoSession.getCourseDao() : null;
     }
 
 }

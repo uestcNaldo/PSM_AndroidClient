@@ -1,29 +1,24 @@
 package com.uestc.naldo.psm.activity.CommitActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.uestc.naldo.psm.BaseActivity;
 import com.uestc.naldo.psm.R;
-import com.uestc.naldo.psm.model.Attendance;
+import com.uestc.naldo.psm.model.AttendanceItem;
 import com.uestc.naldo.psm.model.TrainerItem;
 import com.uestc.naldo.psm.util.DateUtils;
 
 public class AttendanceRecordActivity extends BaseActivity {
 
     public static String TRAINER_ITEM_DATA = "trainer_item_data";
-    private Attendance attendance = new Attendance();
+    private AttendanceItem attendanceItem = new AttendanceItem();
     private String status = null;
 
     private final String STATUS_NORMAL = "正常出勤";
@@ -41,7 +36,7 @@ public class AttendanceRecordActivity extends BaseActivity {
         TrainerItem trainerItem = (TrainerItem) getIntent().getSerializableExtra(TRAINER_ITEM_DATA);
         int trainerId = trainerItem.getId();
 
-        attendance.setTrainer_id(trainerId);
+        attendanceItem.setTrainer_id(trainerId);
 
 
         //绑定View
@@ -54,20 +49,20 @@ public class AttendanceRecordActivity extends BaseActivity {
                 switch (checkedId){
                     case R.id.action_choose_normal:{
                         status = STATUS_NORMAL;
-                        attendance.setStatus(status);
-                        attendance.setDate(DateUtils.getTodayDate());
+                        attendanceItem.setStatus(status);
+                        attendanceItem.setDate(DateUtils.getTodayDate());
                         break;
                     }
                     case R.id.action_choose_late: {
                         status = STATUS_LATE;
-                        attendance.setStatus(status);
-                        attendance.setDate(DateUtils.getTodayDate());
+                        attendanceItem.setStatus(status);
+                        attendanceItem.setDate(DateUtils.getTodayDate());
                         break;
                     }
                     case R.id.action_choose_leave: {
                         status = STATUS_LEAVE;
-                        attendance.setStatus(status);
-                        attendance.setDate(DateUtils.getTodayDate());
+                        attendanceItem.setStatus(status);
+                        attendanceItem.setDate(DateUtils.getTodayDate());
                         break;
                     }
                 }
