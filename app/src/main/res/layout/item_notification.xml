@@ -53,27 +53,27 @@
                     android:textSize="@dimen/notifi_item_other_size"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal|bottom"
-                    android:text="@string/notifi_item_lable_admin"
-                    android:textSize="@dimen/notifi_item_other_size"/>
-                <TextView
-                    android:id="@+id/item_notification_author"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical|left|bottom"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/notifi_item_other_size"/>
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1">-->
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center_horizontal|bottom"-->
+                    <!--android:text="@string/notifi_item_lable_admin"-->
+                    <!--android:textSize="@dimen/notifi_item_other_size"/>-->
+                <!--<TextView-->
+                    <!--android:id="@+id/item_notification_author"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:gravity="center_vertical|left|bottom"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="@dimen/notifi_item_other_size"/>-->
+            <!--</LinearLayout>-->
 
         </LinearLayout>
     </LinearLayout>

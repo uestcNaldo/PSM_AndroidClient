@@ -9,9 +9,12 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.activity.DetailActivity.AttendanceDetailActivity;
+import com.uestc.naldo.psm.activity.MainActivity.TrainerMainActivity;
+import com.uestc.naldo.psm.model.Trainer;
 import com.uestc.naldo.psm.util.ActivityCollector;
 
 /**
@@ -19,11 +22,19 @@ import com.uestc.naldo.psm.util.ActivityCollector;
  */
 public class TrainerInfoFragment extends Fragment {
 
+    private Trainer trainer;
 
     public TrainerInfoFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        trainer = TrainerMainActivity.trainer;
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,6 +52,7 @@ public class TrainerInfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), AttendanceDetailActivity.class);
+                intent.putExtra("trainer", trainer);
                 startActivity(intent);
             }
         });
@@ -54,5 +66,17 @@ public class TrainerInfoFragment extends Fragment {
                 Process.killProcess(Process.myPid());
             }
         });
+
+        View action_info_show = getActivity().findViewById(R.id.info_trainer);
+        action_info_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //查看训练师个人信息
+            }
+        });
+        TextView info_name = (TextView) getActivity().findViewById(R.id.info_name);
+        info_name.setText(trainer.getName()+"("+trainer.getUsername()+")");
+
+
     }
 }

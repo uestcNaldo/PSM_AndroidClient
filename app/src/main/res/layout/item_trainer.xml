@@ -74,6 +74,7 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical|left|bottom"
                     android:textColor="@color/colorBlack"
+                    android:text="训犬师"
                     android:textSize="@dimen/trainer_item_other_size"/>
             </LinearLayout>
 

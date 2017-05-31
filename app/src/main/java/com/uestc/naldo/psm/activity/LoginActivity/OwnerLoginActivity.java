@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,19 +19,30 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.uestc.naldo.psm.BaseActivity;
 import com.uestc.naldo.psm.activity.MainActivity.OwnerMainActivity;
 import com.uestc.naldo.psm.R;
+import com.uestc.naldo.psm.json.LoginResult;
+import com.uestc.naldo.psm.model.Owner;
+import com.uestc.naldo.psm.util.Static;
+
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class OwnerLoginActivity extends BaseActivity {
 
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
-    //private UserLoginTask mAuthTask = null;
+    private Owner owner = new Owner();
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -42,6 +54,11 @@ public class OwnerLoginActivity extends BaseActivity {
     private View mProgressView;
     private View mLoginFormView;
     private CheckBox rememberPass;
+
+    private String URL_PROTOCOL = "http://";
+    private String URL_IP = Static.URL_IP;
+    private String URL_SUFFIX = "/app/ownerlogin";
+    private String URL = URL_PROTOCOL+URL_IP+URL_SUFFIX;
 
     private final String REMEMBER_PASSWORD = "remember_owner_password";
     private final String USERNAME_DEFAULT = "owner";
@@ -82,45 +99,112 @@ public class OwnerLoginActivity extends BaseActivity {
         mOwnerSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username = mUsernameView.getText().toString();
-                String password = mPasswordView.getText().toString();
-
-                //使用默认账号密码
-                if (username.equals(USERNAME_DEFAULT) && password.equals(PASSWORD_DEFAULT)){
-                    editor = pref.edit();
-                    if (rememberPass.isChecked()){//检查记住密码是否选中
-                        editor.putBoolean(REMEMBER_PASSWORD, true);
-                        editor.putString(USERNAME_KEY, username);
-                        editor.putString(PASSWORD_KEY, password);
-                    }else {
-                        editor.clear();
-                    }
-                    editor.apply();
-                    Intent intent = new Intent(OwnerLoginActivity.this, OwnerMainActivity.class);
-                    startActivity(intent);
-                    finish();
-                }else {
-                    Toast.makeText(OwnerLoginActivity.this, "用户名密码错误", Toast.LENGTH_SHORT).show();
+                if (mUsernameView.getText().toString() == null || mPasswordView.getText().toString() == null){
+                    Toast.makeText(OwnerLoginActivity.this, "用户名和密码输入不完整，请继续输入",Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
-                //attemptLogin();
+                owner.setUsername(mUsernameView.getText().toString());
+                owner.setPassword(mPasswordView.getText().toString());
+
+                doLogin();
+
 
             }
         });
 
-//        Button mOwnerRegisterButton = (Button) findViewById(R.id.owner_register_button);
-//        mOwnerRegisterButton.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
+        Button mOwnerRegisterButton = (Button) findViewById(R.id.owner_register_button);
+        mOwnerRegisterButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OwnerLoginActivity.this, OwnerRegisterActivity.class);
+                startActivity(intent);
+
+            }
+        });
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
 
+    private void doLogin() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                final OkHttpClient okHttpClient = new OkHttpClient();
+                Request.Builder builder = new Request.Builder();
+
+                RequestBody requestBody = new FormBody.Builder()
+                        .add("username", owner.getUsername())
+                        .add("password", owner.getPassword())
+                        .build();
+
+                Request request = builder.post(requestBody).url(URL).build();
+
+                Call call = okHttpClient.newCall(request);
+
+
+                call.enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        e.printStackTrace();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(OwnerLoginActivity.this, "网络请求失败", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        String responseData =response.body().string();
+                        Gson gson = new Gson();
+                        final LoginResult loginResult = gson.fromJson(responseData, LoginResult.class);
+
+                        final Owner ownerResult = gson.fromJson(loginResult.getUser().toString(), Owner.class);
+                        Log.d("onResponse:", ownerResult.getId()+ownerResult.getUsername()+ownerResult.getPassword()+ownerResult.getName());
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (loginResult.getCode()==1){
+                                    Toast.makeText(OwnerLoginActivity.this, "登录成功", Toast.LENGTH_LONG).show();
+                                    editor = pref.edit();
+                                    if (rememberPass.isChecked()){//检查记住密码是否选中
+                                        editor.putBoolean(REMEMBER_PASSWORD, true);
+                                        editor.putString(USERNAME_KEY, owner.getUsername());
+                                        editor.putString(PASSWORD_KEY, owner.getPassword());
+                                    }else {
+                                        editor.clear();
+                                    }
+                                    editor.apply();
+                                    Intent intent = new Intent(OwnerLoginActivity.this, OwnerMainActivity.class);
+                                    intent.putExtra("owner",ownerResult);
+                                    startActivity(intent);
+                                    finish();
+
+                                }
+                                if (loginResult.getCode()==0){
+                                    Toast.makeText(OwnerLoginActivity.this, "登录失败，用户名密码错误", Toast.LENGTH_SHORT).show();
+
+                                }
+
+
+                            }
+                        });
+
+                    }
+                });
+
+            }
+        }).start();
+
+    }
+
 //    private void populateAutoComplete() {
-//        if (!mayRequestContacts()) {
+//        if (!mayRequestContacts()
+// ) {
 //            return;
 //        }
 //

@@ -1,8 +1,5 @@
 package com.uestc.naldo.psm.model;
 
-/**
- * Created by Naldo on 2017/5/14.
- */
 
 public class AttendanceItem {
 
@@ -36,5 +33,13 @@ public class AttendanceItem {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

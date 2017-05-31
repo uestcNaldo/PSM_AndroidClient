@@ -18,12 +18,15 @@ import com.uestc.naldo.psm.fragment.OwnerPetFragment;
 import com.uestc.naldo.psm.fragment.OwnerSchoolFragment;
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.fragment.SelectPetDialogFragment;
+import com.uestc.naldo.psm.model.Owner;
 import com.uestc.naldo.psm.model.PetDialogItem;
 
 
-public class OwnerMainActivity extends BaseActivity implements SelectPetDialogFragment.SelectPetDialogListener{
+public class OwnerMainActivity extends BaseActivity {
 
     private static final String TAG = "OwnerMainActivity";
+
+    public static Owner owner;
 
     private OwnerPetFragment mOwnerPetFragment;
     private OwnerSchoolFragment mOwnerSchoolFragment;
@@ -54,7 +57,7 @@ public class OwnerMainActivity extends BaseActivity implements SelectPetDialogFr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_main);
-
+        owner = (Owner) getIntent().getSerializableExtra("owner");
         initView();
         initDefaultFragment(mOwnerPetFragment);
 
@@ -88,10 +91,10 @@ public class OwnerMainActivity extends BaseActivity implements SelectPetDialogFr
 
     }
 
-    @Override
-    public void onDialogPetItemSelect(PetDialogItem petDialogItem) {
 
-    }
+
+
+
 
 //    private void showFragment(Fragment currentFragment, Fragment destFragment){
 //        FragmentManager fragmentManager = getFragmentManager();

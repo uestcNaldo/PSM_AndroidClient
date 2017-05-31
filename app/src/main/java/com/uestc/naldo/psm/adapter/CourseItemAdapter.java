@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.activity.ItemActivity.CourseActivity;
+import com.uestc.naldo.psm.model.Course;
 import com.uestc.naldo.psm.model.CourseItem;
 
 import java.util.List;
@@ -23,7 +24,7 @@ import java.util.List;
 public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<CourseItem> mCourseItemList;
+    private List<Course> mCourseItemList;
 
     private String TAG = "CourseItemAdapter";
 
@@ -41,7 +42,7 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Vi
         }
     }
 
-    public CourseItemAdapter(List<CourseItem> courseItemList){
+    public CourseItemAdapter(List<Course> courseItemList){
         mCourseItemList = courseItemList;
     }
 
@@ -57,7 +58,7 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Vi
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getAdapterPosition();
-                CourseItem courseItem = mCourseItemList.get(position);
+                Course courseItem = mCourseItemList.get(position);
                 Intent intent = new Intent(mContext, CourseActivity.class);
                 intent.putExtra(CourseActivity.COURSE_ITEM_DATA, courseItem);
 
@@ -70,7 +71,7 @@ public class CourseItemAdapter extends RecyclerView.Adapter<CourseItemAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        CourseItem courseItem = mCourseItemList.get(position);
+        Course courseItem = mCourseItemList.get(position);
         holder.courseName.setText(courseItem.getName());
         holder.courseDuration.setText(courseItem.getDuration());
 

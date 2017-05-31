@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.activity.DetailActivity.NotificationDetailActivity;
+import com.uestc.naldo.psm.model.Notification;
 import com.uestc.naldo.psm.model.NotificationItem;
 
 import java.util.List;
@@ -26,25 +27,25 @@ public class NotificationItemAdapter extends RecyclerView.Adapter<NotificationIt
 
     private Context mContext;
     private String TAG = "NotificationItemAdapter";
-    private List<NotificationItem> mNotificationItemList;
+    private List<Notification> mNotificationItemList;
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         CardView cardView;
         TextView notifiTitle;
         TextView notifiDate;
-        TextView notifiAuthor;
+//        TextView notifiAuthor;
 
         public ViewHolder(View itemView) {
             super(itemView);
             cardView = (CardView) itemView;
             notifiTitle = (TextView) itemView.findViewById(R.id.item_notification_title);
             notifiDate = (TextView) itemView.findViewById(R.id.item_notification_date);
-            notifiAuthor = (TextView) itemView.findViewById(R.id.item_notification_author);
+//            notifiAuthor = (TextView) itemView.findViewById(R.id.item_notification_author);
 
         }
     }
 
-    public NotificationItemAdapter(List<NotificationItem> notificationItemList){
+    public NotificationItemAdapter(List<Notification> notificationItemList){
         mNotificationItemList = notificationItemList;
     }
 
@@ -60,12 +61,12 @@ public class NotificationItemAdapter extends RecyclerView.Adapter<NotificationIt
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getAdapterPosition();
-                NotificationItem notificationItem = mNotificationItemList.get(position);
+                Notification notificationItem = mNotificationItemList.get(position);
                 Intent intent = new Intent(mContext, NotificationDetailActivity.class);
                 intent.putExtra(NotificationDetailActivity.NOTIFI_ITEM_DATA, notificationItem);
 
 
-                Toast.makeText(v.getContext(), "Clicked Notification CardView: ID = "+notificationItem.getId(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "Clicked Notification CardView: ID = "+notificationItem.getId(),Toast.LENGTH_SHORT).show();
                 mContext.startActivity(intent);
             }
         });
@@ -76,10 +77,10 @@ public class NotificationItemAdapter extends RecyclerView.Adapter<NotificationIt
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        NotificationItem notificationItem = mNotificationItemList.get(position);
+        Notification notificationItem = mNotificationItemList.get(position);
         holder.notifiTitle.setText(notificationItem.getTitle());
-        holder.notifiDate.setText(notificationItem.getDate());
-        holder.notifiAuthor.setText(notificationItem.getAuthor());
+        holder.notifiDate.setText(notificationItem.getDate().toString());
+//        holder.notifiAuthor.setText(notificationItem.getAuthor());
 
 
         

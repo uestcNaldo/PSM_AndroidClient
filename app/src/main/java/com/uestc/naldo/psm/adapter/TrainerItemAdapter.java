@@ -13,6 +13,7 @@ import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.activity.CommitActivity.AttendanceRecordActivity;
 import com.uestc.naldo.psm.activity.DetailActivity.AttendanceTrainerListActivity;
 import com.uestc.naldo.psm.activity.ItemActivity.TrainerActivity;
+import com.uestc.naldo.psm.model.Trainer;
 import com.uestc.naldo.psm.model.TrainerItem;
 
 import java.util.ArrayList;
@@ -24,10 +25,10 @@ import java.util.List;
 
 public class TrainerItemAdapter extends RecyclerView.Adapter<TrainerItemAdapter.ViewHolder>{
     private Context mContext;
-    private List<TrainerItem> mTrainerItemList;
+    private List<Trainer> mTrainerItemList;
     private String TAG = "TrainerItemAdapter";
 
-    public TrainerItemAdapter(List<TrainerItem> trainerItemList) {
+    public TrainerItemAdapter(List<Trainer> trainerItemList) {
         mTrainerItemList = trainerItemList;
     }
 
@@ -58,7 +59,7 @@ public class TrainerItemAdapter extends RecyclerView.Adapter<TrainerItemAdapter.
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getAdapterPosition();
-                TrainerItem trainerItem = mTrainerItemList.get(position);
+                Trainer trainerItem = mTrainerItemList.get(position);
                 if (mContext.getClass().equals(AttendanceTrainerListActivity.class)){
                     Intent intent = new Intent(mContext, AttendanceRecordActivity.class);
                     intent.putExtra(AttendanceRecordActivity.TRAINER_ITEM_DATA, trainerItem);
@@ -78,10 +79,10 @@ public class TrainerItemAdapter extends RecyclerView.Adapter<TrainerItemAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        TrainerItem trainerItem = mTrainerItemList.get(position);
+        Trainer trainerItem = mTrainerItemList.get(position);
         holder.trainerName.setText(trainerItem.getName());
         holder.trainerSex.setText(trainerItem.getSex());
-        holder.trainerPosition.setText(trainerItem.getName());
+        holder.trainerPosition.setText(trainerItem.getPosition());
 
     }
 

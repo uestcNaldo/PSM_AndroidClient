@@ -49,18 +49,18 @@ public class TrainerSchoolFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), SchoolDetailActivity.class);
                 startActivity(intent);
 
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 
-        CardView cardView_school_calendar = (CardView) getActivity().findViewById(R.id.card_item_school_calendar);
-        cardView_school_calendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
-            }
-        });
+//        CardView cardView_school_calendar = (CardView) getActivity().findViewById(R.id.card_item_school_calendar);
+//        cardView_school_calendar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
         CardView cardView_school_detail = (CardView) getActivity().findViewById(R.id.card_item_school_detail);
         cardView_school_detail.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +69,7 @@ public class TrainerSchoolFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), SchoolStyleActivity.class);
                 startActivity(intent);
 
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -81,7 +81,7 @@ public class TrainerSchoolFragment extends Fragment {
                 startActivity(intent);
 
 
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -91,7 +91,7 @@ public class TrainerSchoolFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), PetTrainerListActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,7 +101,7 @@ public class TrainerSchoolFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), TrainerListActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 

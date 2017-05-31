@@ -27,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/trainer_example_1"
+
                 app:layout_collapseMode="parallax"/>
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -41,14 +41,14 @@
 
     <include layout="@layout/content_trainer" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        android:src="@drawable/ic_star_24dp"
-        app:backgroundTint="@color/colorOrange"/>
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--app:layout_anchor="@id/app_bar"-->
+        <!--app:layout_anchorGravity="bottom|end"-->
+        <!--android:src="@drawable/ic_star_24dp"-->
+        <!--app:backgroundTint="@color/colorOrange"/>-->
 
 </android.support.design.widget.CoordinatorLayout>

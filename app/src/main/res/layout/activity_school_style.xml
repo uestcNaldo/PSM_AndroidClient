@@ -21,7 +21,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="校园风采展示">
 
         </android.support.v7.widget.Toolbar>
 

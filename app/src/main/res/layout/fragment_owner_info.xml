@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:id="@+id/info_owner_name"
+                android:id="@+id/info_owner"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,34 +111,34 @@
                     android:textSize="@dimen/info_item_name_size"/>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/info_refresh"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/layout_item_info"
-                android:paddingTop="@dimen/layout_item_padding"
-                android:paddingBottom="@dimen/layout_item_padding"
-                android:background="@color/colorWhite"
-                android:clickable="true"
-                android:foreground="?android:attr/selectableItemBackground">
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="@dimen/info_item_margin"
-                    android:layout_marginRight="@dimen/info_item_margin"
-                    android:src="@drawable/ic_refresh_24dp"
-                    android:scaleType="center"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7"
-                    android:text="@string/info_refresh"
-                    android:gravity="center|left"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/info_item_name_size"/>
-            </LinearLayout>
+            <!--<LinearLayout-->
+                <!--android:id="@+id/info_refresh"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/layout_item_info"-->
+                <!--android:paddingTop="@dimen/layout_item_padding"-->
+                <!--android:paddingBottom="@dimen/layout_item_padding"-->
+                <!--android:background="@color/colorWhite"-->
+                <!--android:clickable="true"-->
+                <!--android:foreground="?android:attr/selectableItemBackground">-->
+                <!--<ImageView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_marginLeft="@dimen/info_item_margin"-->
+                    <!--android:layout_marginRight="@dimen/info_item_margin"-->
+                    <!--android:src="@drawable/ic_refresh_24dp"-->
+                    <!--android:scaleType="center"/>-->
+                <!--<TextView-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_weight="7"-->
+                    <!--android:text="@string/info_refresh"-->
+                    <!--android:gravity="center|left"-->
+                    <!--android:textColor="@color/colorBlack"-->
+                    <!--android:textSize="@dimen/info_item_name_size"/>-->
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/info_exit"

@@ -45,7 +45,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="记录出勤："/>
+                android:text="记录出勤："
+                android:textSize="20sp"/>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

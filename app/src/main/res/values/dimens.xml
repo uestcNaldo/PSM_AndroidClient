@@ -17,7 +17,7 @@
 
     <dimen name="item_pet_margin">5dp</dimen>
     <dimen name="item_pet_name_size">24sp</dimen>
-    <dimen name="item_pet_other_size">16sp</dimen>
+    <dimen name="item_pet_other_size">14sp</dimen>
 
     <dimen name="cardview_item_elevation">4dp</dimen>
     <dimen name="item_cardview_margin">5dp</dimen>

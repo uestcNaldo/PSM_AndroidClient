@@ -18,19 +18,16 @@ import com.uestc.naldo.psm.activity.ItemActivity.PetOwnerActivity;
 import com.uestc.naldo.psm.activity.ItemActivity.PetTrainerActivity;
 import com.uestc.naldo.psm.activity.MainActivity.OwnerMainActivity;
 import com.uestc.naldo.psm.activity.MainActivity.TrainerMainActivity;
+import com.uestc.naldo.psm.model.Pet;
 import com.uestc.naldo.psm.model.PetItem;
 
 import java.util.List;
 
-/**
- * Created by Naldo on 2017/5/10.
- */
 
 public class PetItemAdapter extends RecyclerView.Adapter<PetItemAdapter.ViewHolder>{
 
     private Context mContext;
-    private List<PetItem> mPetItemList;
-
+    private List<Pet> mPetItemList;
     private String TAG = "PetItemAdapter";
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -51,9 +48,10 @@ public class PetItemAdapter extends RecyclerView.Adapter<PetItemAdapter.ViewHold
         }
     }
 
-    public PetItemAdapter(List<PetItem> petItemList){
+    public PetItemAdapter(List<Pet> petItemList){
         mPetItemList = petItemList;
     }
+
 
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
@@ -66,8 +64,8 @@ public class PetItemAdapter extends RecyclerView.Adapter<PetItemAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 int position = viewHolder.getAdapterPosition();
-                PetItem petItem = mPetItemList.get(position);
-                Toast.makeText(v.getContext(), "Clicked Pet CardView"+petItem.getId(),Toast.LENGTH_SHORT).show();
+                Pet petItem = mPetItemList.get(position);
+//                Toast.makeText(v.getContext(), "Clicked Pet CardView"+petItem.getId(),Toast.LENGTH_SHORT).show();
 
                 //如果宠物主人使用PetItemAdapter，从宠物主人主页查看
                 if (mContext.getClass().equals(OwnerMainActivity.class)){
@@ -102,9 +100,9 @@ public class PetItemAdapter extends RecyclerView.Adapter<PetItemAdapter.ViewHold
             @Override
             public boolean onLongClick(View v) {
                 int position = viewHolder.getAdapterPosition();
-                PetItem petItem = mPetItemList.get(position);
+                Pet petItem = mPetItemList.get(position);
 
-                Toast.makeText(v.getContext(), "Long Clicked Pet CardView: ID = "+petItem.getId(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(v.getContext(), "Long Clicked Pet CardView: ID = "+petItem.getId(),Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
@@ -114,7 +112,7 @@ public class PetItemAdapter extends RecyclerView.Adapter<PetItemAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        PetItem petItem = mPetItemList.get(position);
+        Pet petItem = mPetItemList.get(position);
         holder.petItemName.setText(petItem.getName());
         holder.petItemAge.setText(String.valueOf(petItem.getAge()));
         holder.petItemSex.setText(petItem.getSex());

@@ -1,19 +1,11 @@
 package com.uestc.naldo.psm.model;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.NotNull;
-import org.greenrobot.greendao.annotation.Generated;
 
-/**
- * Created by Naldo on 2017/5/14.
- */
-@Entity
 public class School {
-    @Id
-    private long id;
 
-    @NotNull
+    private Long id;
+
+
     private String name;
 
     private String contact;
@@ -24,8 +16,7 @@ public class School {
 
     private String address;
 
-    @Generated(hash = 1287824807)
-    public School(long id, @NotNull String name, String contact, String intro,
+    public School(Long id, String name, String contact, String intro,
             String phone, String address) {
         this.id = id;
         this.name = name;
@@ -35,15 +26,14 @@ public class School {
         this.address = address;
     }
 
-    @Generated(hash = 1579966795)
-    public School() {
-    }
 
-    public long getId() {
+    public School() {}
+
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -14,8 +14,11 @@ import com.uestc.naldo.psm.fragment.AdminInfoFragment;
 import com.uestc.naldo.psm.fragment.AdminNotificationFragment;
 import com.uestc.naldo.psm.fragment.AdminSchoolFragment;
 import com.uestc.naldo.psm.R;
+import com.uestc.naldo.psm.model.Admin;
 
 public class AdminMainActivity extends BaseActivity {
+
+    public static Admin admin;
 
     private AdminNotificationFragment mAdminNotificationFragment;
     private AdminSchoolFragment mAdminSchoolFragment;
@@ -46,6 +49,8 @@ public class AdminMainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_main);
+
+        admin = (Admin) getIntent().getSerializableExtra("admin");
 
         initView();
         initDefaultFragment(mAdminSchoolFragment);

@@ -1,19 +1,14 @@
 package com.uestc.naldo.psm.model;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-
-import java.util.Date;
-import org.greenrobot.greendao.annotation.Generated;
+import java.io.Serializable;
+import java.sql.Date;
 
 
-/**
- * Created by Naldo on 2017/5/14.
- */
-@Entity
-public class Feedback {
-    @Id
-    private long id;
+
+
+public class Feedback implements Serializable{
+
+    private Long id;
 
     private String title;
 
@@ -21,11 +16,10 @@ public class Feedback {
 
     private Date date;
 
-    private long ownerId;
+    private Long ownerId;
 
-    @Generated(hash = 442274122)
-    public Feedback(long id, String title, String content, Date date,
-            long ownerId) {
+    public Feedback(Long id, String title, String content, Date date,
+            Long ownerId) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -33,15 +27,14 @@ public class Feedback {
         this.ownerId = ownerId;
     }
 
-    @Generated(hash = 802671868)
-    public Feedback() {
-    }
 
-    public long getId() {
+    public Feedback() {}
+
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,11 +62,11 @@ public class Feedback {
         this.date = date;
     }
 
-    public long getOwnerId() {
+    public Long getOwnerId() {
         return this.ownerId;
     }
 
-    public void setOwnerId(long ownerId) {
+    public void setOwnerId(Long ownerId) {
         this.ownerId = ownerId;
     }
 

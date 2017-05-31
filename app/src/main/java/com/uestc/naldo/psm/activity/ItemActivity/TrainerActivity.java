@@ -1,6 +1,7 @@
 package com.uestc.naldo.psm.activity.ItemActivity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.uestc.naldo.psm.BaseActivity;
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.model.CourseItem;
+import com.uestc.naldo.psm.model.Trainer;
 import com.uestc.naldo.psm.model.TrainerItem;
 
 import org.w3c.dom.Text;
@@ -30,11 +32,15 @@ public class TrainerActivity extends BaseActivity {
         setSupportActionBar(toolbar);
 
         //获取点击事件的训练师数据
-        TrainerItem trainerItem = (TrainerItem) getIntent().getSerializableExtra(TRAINER_ITEM_DATA);
-        int trainerId = trainerItem.getId();
+        Trainer trainerItem = (Trainer) getIntent().getSerializableExtra(TRAINER_ITEM_DATA);
+        Long trainerId = trainerItem.getId();
         String trainerName = trainerItem.getName();
         String trainerSex = trainerItem.getSex();
         String trainerPosition = trainerItem.getPosition();
+        Integer trainerAge = trainerItem.getAge();
+        String trainerEmail = trainerItem.getEmail();
+        String trainerMaxim = trainerItem.getMaxim();
+        String trainerIntro = trainerItem.getIntro();
 
 
         //绑定View
@@ -53,18 +59,15 @@ public class TrainerActivity extends BaseActivity {
         textView_trainerName.setText(trainerName);
         textView_trainerSex.setText(trainerSex);
         textView_trainerPosition.setText(trainerPosition);
+        textView_trainerEmail.setText(trainerEmail);
+        textView_trainerAge.setText(String.valueOf(trainerAge));
+        textView_trainerMaxim.setText(trainerMaxim);
+        textView_trainerIntro.setText(trainerIntro);
 
 
         //查询数据库并绑定
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "收藏", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         //设置返回键
         ActionBar actionBar = getSupportActionBar();

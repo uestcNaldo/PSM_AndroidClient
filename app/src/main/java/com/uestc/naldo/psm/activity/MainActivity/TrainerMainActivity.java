@@ -14,9 +14,13 @@ import com.uestc.naldo.psm.fragment.TrainerInfoFragment;
 import com.uestc.naldo.psm.fragment.TrainerNotificationFragment;
 import com.uestc.naldo.psm.fragment.TrainerSchoolFragment;
 import com.uestc.naldo.psm.R;
+import com.uestc.naldo.psm.model.Trainer;
 
 
 public class TrainerMainActivity extends BaseActivity {
+
+
+    public static Trainer trainer;
 
     private TrainerNotificationFragment mTrainerNotificationFragment;
     private TrainerSchoolFragment mTrainerSchoolFragment;
@@ -48,6 +52,8 @@ public class TrainerMainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trainer_main);
+
+        trainer = (Trainer) getIntent().getSerializableExtra("trainer");
 
         initView();
         initDefaultFragment(mTrainerSchoolFragment);

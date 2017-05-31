@@ -1,45 +1,32 @@
 package com.uestc.naldo.psm.model;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.ToMany;
+import java.sql.Date;
 
-
-import java.util.Date;
-import java.util.List;
-import org.greenrobot.greendao.annotation.Generated;
-
-/**
- * Created by Naldo on 2017/5/13.
- */
-@Entity
 public class Attendance {
-    @Id
-    private long id;
+
+    private Long id;
 
     private String status;
 
     private Date date;
 
-    private long trainerId;
+    private Long trainerId;
 
-    @Generated(hash = 1958540317)
-    public Attendance(long id, String status, Date date, long trainerId) {
+    public Attendance(Long id, String status, Date date, Long trainerId) {
         this.id = id;
         this.status = status;
         this.date = date;
         this.trainerId = trainerId;
     }
 
-    @Generated(hash = 812698609)
     public Attendance() {
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -59,11 +46,11 @@ public class Attendance {
         this.date = date;
     }
 
-    public long getTrainerId() {
+    public Long getTrainerId() {
         return this.trainerId;
     }
 
-    public void setTrainerId(long trainerId) {
+    public void setTrainerId(Long trainerId) {
         this.trainerId = trainerId;
     }
 

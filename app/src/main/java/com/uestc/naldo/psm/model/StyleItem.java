@@ -1,13 +1,12 @@
 package com.uestc.naldo.psm.model;
 
-/**
- * Created by Naldo on 2017/5/12.
- */
 
 public class StyleItem {
 
     private String name;
     private int imageId;
+
+    public StyleItem(){}
 
     public StyleItem(String name, int imageId){
         this.name = name;

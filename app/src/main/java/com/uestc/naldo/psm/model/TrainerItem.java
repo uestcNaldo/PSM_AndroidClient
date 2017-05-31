@@ -2,9 +2,6 @@ package com.uestc.naldo.psm.model;
 
 import java.io.Serializable;
 
-/**
- * Created by Naldo on 2017/5/12.
- */
 
 public class TrainerItem implements Serializable{
     private int id;

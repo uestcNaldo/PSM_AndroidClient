@@ -1,44 +1,37 @@
 package com.uestc.naldo.psm.model;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.ToMany;
 
-import java.util.List;
-import org.greenrobot.greendao.annotation.Generated;
+import java.io.Serializable;
+import java.sql.Date;
 
-/**
- * Created by Naldo on 2017/5/11.
- */
-@Entity
-public class Notification {
-    @Id
-    private long id;
+public class Notification implements Serializable{
+
+    private Long id;
     private String title;
     private String content;
-    private String datetime;
 
-    private long adminId;
+    private Date date;
 
-    @Generated(hash = 924305390)
-    public Notification(long id, String title, String content, String datetime,
-            long adminId) {
+    private Long aid;
+
+
+    public Notification(Long id, String title, String content, Date date,
+            Long aid) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.datetime = datetime;
-        this.adminId = adminId;
+        this.date = date;
+        this.aid = aid;
     }
 
-    @Generated(hash = 1855225820)
-    public Notification() {
-    }
 
-    public long getId() {
+    public Notification() {}
+
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -58,21 +51,20 @@ public class Notification {
         this.content = content;
     }
 
-    public String getDatetime() {
-        return this.datetime;
+    public Date getDate() {
+        return this.date;
     }
 
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
+    public void setDate(String datetime) {
+        this.date = date;
     }
 
-    public long getAdminId() {
-        return this.adminId;
+    public Long getAid() {
+        return this.aid;
     }
 
-    public void setAdminId(long adminId) {
-        this.adminId = adminId;
+    public void setAid(Long aid) {
+        this.aid = aid;
     }
-
 
 }

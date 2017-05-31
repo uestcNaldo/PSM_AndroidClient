@@ -1,43 +1,22 @@
 package com.uestc.naldo.psm.model;
 
-import org.greenrobot.greendao.annotation.Entity;
-import org.greenrobot.greendao.annotation.Id;
-import org.greenrobot.greendao.annotation.NotNull;
-import org.greenrobot.greendao.annotation.ToMany;
 
-import java.util.List;
-import org.greenrobot.greendao.annotation.Generated;
-import org.greenrobot.greendao.DaoException;
-import com.uestc.naldo.psm.dao.DaoSession;
-import com.uestc.naldo.psm.dao.PetDao;
-import com.uestc.naldo.psm.dao.CourseDao;
+import java.io.Serializable;
 
-/**
- * Created by Naldo on 2017/5/14.
- */
-@Entity
-public class Course {
-    @Id
-    private long id;
-    @NotNull
+public class Course implements Serializable{
+
+    private Long id;
+
     private String name;
+    private String inst;
     private String condition;
     private String duration;
     private String content;
     private String prise;
     private String note;
 
-    @ToMany(referencedJoinProperty = "courseId")
-    List<Pet> pets;
-    /** Used to resolve relations */
-    @Generated(hash = 2040040024)
-    private transient DaoSession daoSession;
-    /** Used for active entity operations. */
-    @Generated(hash = 2063667503)
-    private transient CourseDao myDao;
 
-    @Generated(hash = 1127809439)
-    public Course(long id, @NotNull String name, String condition, String duration,
+    public Course(Long id, String name, String condition, String duration,
             String content, String prise, String note) {
         this.id = id;
         this.name = name;
@@ -48,15 +27,14 @@ public class Course {
         this.note = note;
     }
 
-    @Generated(hash = 1355838961)
-    public Course() {
-    }
 
-    public long getId() {
+    public Course() {}
+
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,75 +86,12 @@ public class Course {
         this.note = note;
     }
 
-    /**
-     * To-many relationship, resolved on first access (and after reset).
-     * Changes to to-many relations are not persisted, make changes to the target entity.
-     */
-    @Generated(hash = 1647453670)
-    public List<Pet> getPets() {
-        if (pets == null) {
-            final DaoSession daoSession = this.daoSession;
-            if (daoSession == null) {
-                throw new DaoException("Entity is detached from DAO context");
-            }
-            PetDao targetDao = daoSession.getPetDao();
-            List<Pet> petsNew = targetDao._queryCourse_Pets(id);
-            synchronized (this) {
-                if (pets == null) {
-                    pets = petsNew;
-                }
-            }
-        }
-        return pets;
+
+    public String getInst() {
+        return inst;
     }
 
-    /** Resets a to-many relationship, making the next get call to query for a fresh result. */
-    @Generated(hash = 1767632067)
-    public synchronized void resetPets() {
-        pets = null;
+    public void setInst(String inst) {
+        this.inst = inst;
     }
-
-    /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#delete(Object)}.
-     * Entity must attached to an entity context.
-     */
-    @Generated(hash = 128553479)
-    public void delete() {
-        if (myDao == null) {
-            throw new DaoException("Entity is detached from DAO context");
-        }
-        myDao.delete(this);
-    }
-
-    /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
-     * Entity must attached to an entity context.
-     */
-    @Generated(hash = 1942392019)
-    public void refresh() {
-        if (myDao == null) {
-            throw new DaoException("Entity is detached from DAO context");
-        }
-        myDao.refresh(this);
-    }
-
-    /**
-     * Convenient call for {@link org.greenrobot.greendao.AbstractDao#update(Object)}.
-     * Entity must attached to an entity context.
-     */
-    @Generated(hash = 713229351)
-    public void update() {
-        if (myDao == null) {
-            throw new DaoException("Entity is detached from DAO context");
-        }
-        myDao.update(this);
-    }
-
-    /** called by internal mechanisms, do not call yourself. */
-    @Generated(hash = 94420068)
-    public void __setDaoSession(DaoSession daoSession) {
-        this.daoSession = daoSession;
-        myDao = daoSession != null ? daoSession.getCourseDao() : null;
-    }
-
 }
