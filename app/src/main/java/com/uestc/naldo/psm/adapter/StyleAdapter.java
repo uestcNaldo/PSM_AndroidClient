@@ -69,7 +69,8 @@ public class StyleAdapter extends RecyclerView.Adapter<StyleAdapter.ViewHolder>{
     public void onBindViewHolder(ViewHolder holder, int position) {
         Photo photo = mStyleItemList.get(position);
         String URI = URL+photo.getName();
-        holder.styleName.setText(photo.getName());
+        String name = photo.getName();
+        holder.styleName.setText(name.substring(0, name.indexOf(".")));
         Glide.with(mContext).load(URI).into(holder.styleImage);
     }
 
