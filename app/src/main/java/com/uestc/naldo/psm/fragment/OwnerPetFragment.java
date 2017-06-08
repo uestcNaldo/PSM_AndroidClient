@@ -120,22 +120,19 @@ public class OwnerPetFragment extends Fragment {
                         Log.d(TAG, "onResponse: "+responseData);
                         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
                         final PetListResult petListResult = gson.fromJson(responseData, PetListResult.class);
-
-
-
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 petItemAdapter.notifyDataSetChanged();
                                 if (petListResult.getCode()==1){
-                                    Toast.makeText(getActivity(), "获取宠物列表成功", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "获取宠物列表成功", Toast.LENGTH_SHORT).show();
                                     petItemList.clear();
                                     for (Pet pet : petListResult.getPetList()){
                                         petItemList.add(pet);
                                     }
                                 }
                                 if (petListResult.getCode()==0){
-                                    Toast.makeText(getActivity(), "宠物列表为空", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "宠物列表为空", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -168,11 +165,5 @@ public class OwnerPetFragment extends Fragment {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-//    public void showSelectPetDialog(){
-//        DialogFragment dialogFragment = new SelectPetDialogFragment();
-//        dialogFragment.show(getFragmentManager(), "select_pet");
-//    }
-
 
 }

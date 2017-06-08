@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.uestc.naldo.psm.R;
+import com.uestc.naldo.psm.activity.DetailActivity.ContactActivity;
 import com.uestc.naldo.psm.activity.DetailActivity.CourseListActivity;
 import com.uestc.naldo.psm.activity.DetailActivity.PetTrainerListActivity;
 import com.uestc.naldo.psm.activity.DetailActivity.SchoolDetailActivity;
@@ -52,18 +53,17 @@ public class AdminSchoolFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), SchoolDetailActivity.class);
                 startActivity(intent);
 
-//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
             }
         });
 
-//        CardView cardView_school_calendar = (CardView) getActivity().findViewById(R.id.card_item_school_calendar);
-//        cardView_school_calendar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Toast.makeText(getActivity(), "Click CardView: "+v.getContext(),Toast.LENGTH_SHORT).show();
-//            }
-//        });
+        CardView cardView_school_calendar = (CardView) getActivity().findViewById(R.id.card_item_school_calendar);
+        cardView_school_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ContactActivity.class);
+                startActivity(intent);
+            }
+        });
 
         CardView cardView_school_detail = (CardView) getActivity().findViewById(R.id.card_item_school_detail);
         cardView_school_detail.setOnClickListener(new View.OnClickListener() {

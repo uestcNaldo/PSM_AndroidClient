@@ -97,10 +97,11 @@ public class CourseListActivity extends BaseActivity {
                         for (Course course : courseListAll){
                             courseItemList.add(course);
                         }
-                        courseItemAdapter.notifyDataSetChanged();
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                courseItemAdapter.notifyDataSetChanged();
                                 if (courseListAll.size()!=0){
                                     Toast.makeText(MyApplication.getContext(), "获取课程列表成功", Toast.LENGTH_SHORT).show();
 

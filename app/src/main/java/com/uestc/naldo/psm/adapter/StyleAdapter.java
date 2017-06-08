@@ -3,7 +3,6 @@ package com.uestc.naldo.psm.adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,21 +11,23 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.uestc.naldo.psm.R;
+import com.uestc.naldo.psm.model.Photo;
 import com.uestc.naldo.psm.model.StyleItem;
+import com.uestc.naldo.psm.util.Static;
 
 import java.util.List;
 
-import static android.content.ContentValues.TAG;
 
-/**
- * Created by Naldo on 2017/5/12.
- */
+public class StyleAdapter extends RecyclerView.Adapter<StyleAdapter.ViewHolder>{
 
-public class StyleAdapater  extends RecyclerView.Adapter<StyleAdapater.ViewHolder>{
+    private String URL_PROTOCOL = "http://";
+    private String URL_IP = Static.URL_IP;
+    private String URL_SUFFIX = "/image/";
+    private String URL = URL_PROTOCOL+URL_IP+URL_SUFFIX;
 
     private Context mContext;
-    private List<StyleItem> mStyleIteList;
-    private String TAG = "StyleAdapater";
+    private List<Photo> mStyleItemList;
+    private String TAG = "StyleAdapter";
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         CardView cardView;
@@ -41,8 +42,8 @@ public class StyleAdapater  extends RecyclerView.Adapter<StyleAdapater.ViewHolde
         }
     }
 
-    public StyleAdapater(List<StyleItem> styleItemList){
-        mStyleIteList = styleItemList;
+    public StyleAdapter(List<Photo> styleItemList){
+        mStyleItemList = styleItemList;
 
     }
 
@@ -53,7 +54,6 @@ public class StyleAdapater  extends RecyclerView.Adapter<StyleAdapater.ViewHolde
             mContext = parent.getContext();
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_style, parent, false);
-        Log.d(TAG, "onCreateViewHolder: mContext = "+mContext+", parent = "+parent.toString());
         final ViewHolder viewHolder = new ViewHolder(view);
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,14 +67,15 @@ public class StyleAdapater  extends RecyclerView.Adapter<StyleAdapater.ViewHolde
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        StyleItem styleItem = mStyleIteList.get(position);
-        holder.styleName.setText(styleItem.getName());
-        Glide.with(mContext).load(styleItem.getImageId()).into(holder.styleImage);
+        Photo photo = mStyleItemList.get(position);
+        String URI = URL+photo.getName();
+        holder.styleName.setText(photo.getName());
+        Glide.with(mContext).load(URI).into(holder.styleImage);
     }
 
     @Override
     public int getItemCount() {
-        return mStyleIteList.size();
+        return mStyleItemList.size();
     }
 
 

@@ -93,10 +93,11 @@ public class TrainerListActivity extends BaseActivity {
                         for (Trainer trainer : trainerListAll){
                             trainerItemList.add(trainer);
                         }
-                        trainerItemAdapter.notifyDataSetChanged();
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+                                trainerItemAdapter.notifyDataSetChanged();
                                 if (trainerListAll.size()!=0){
                                     Toast.makeText(MyApplication.getContext(), "获取训练师列表成功", Toast.LENGTH_SHORT).show();
 

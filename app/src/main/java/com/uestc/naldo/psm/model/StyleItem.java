@@ -4,6 +4,7 @@ package com.uestc.naldo.psm.model;
 public class StyleItem {
 
     private String name;
+
     private int imageId;
 
     public StyleItem(){}

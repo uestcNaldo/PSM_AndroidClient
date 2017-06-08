@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.uestc.naldo.psm.R;
 import com.uestc.naldo.psm.activity.CommitActivity.OwnerFeedbackCommitActivity;
+import com.uestc.naldo.psm.activity.DetailActivity.OwnerDetailActivity;
+import com.uestc.naldo.psm.activity.DetailActivity.OwnerNotifiListActivity;
 import com.uestc.naldo.psm.activity.MainActivity.OwnerMainActivity;
 import com.uestc.naldo.psm.model.Owner;
 import com.uestc.naldo.psm.util.ActivityCollector;
@@ -21,7 +23,7 @@ import com.uestc.naldo.psm.util.ActivityCollector;
 
 public class OwnerInfoFragment extends Fragment {
 
-    private Owner owner;
+    public static Owner owner;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,6 +55,9 @@ public class OwnerInfoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //查看宠物主人信息
+                Intent intent = new Intent(getActivity(), OwnerDetailActivity.class);
+                intent.putExtra("owner", owner);
+                startActivity(intent);
             }
         });
         final TextView info_name = (TextView) getActivity().findViewById(R.id.info_name);
@@ -64,6 +69,16 @@ public class OwnerInfoFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), OwnerFeedbackCommitActivity.class);
                 intent.putExtra("owner", owner);
+                startActivity(intent);
+
+            }
+        });
+
+        View action_show_notifi = getActivity().findViewById(R.id.info_notifi);
+        action_show_notifi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), OwnerNotifiListActivity.class);
                 startActivity(intent);
 
             }

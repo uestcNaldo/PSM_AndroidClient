@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.uestc.naldo.psm.activity.ItemActivity.PetOwnerActivity"
-    tools:showIn="@layout/activity_pet_owner">
+    tools:context="com.uestc.naldo.psm.activity.DetailActivity.OwnerDetailActivity"
+    tools:showIn="@layout/activity_owner_detail">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_detail_content_marginTop"
+            android:text="查看修改会员信息"
+            android:textSize="18sp"/>
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -34,15 +41,14 @@
                     android:gravity="center|left"
                     android:textSize="@dimen/pet_detail_lable_size"
                     android:textColor="@color/colorText"
-                    android:text="@string/lable_pet_detail_name"/>
+                    android:text="姓名"/>
                 <TextView
-                    android:id="@+id/text_pet_name"
+                    android:id="@+id/text_owner_name"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="7"
                     android:gravity="center|right"
-                    android:textSize="@dimen/pet_detail_value_size"
-                    android:text="@string/value_pet_default_name"/>
+                    android:textSize="@dimen/pet_detail_value_size"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -57,15 +63,14 @@
                     android:gravity="center|left"
                     android:textSize="@dimen/pet_detail_lable_size"
                     android:textColor="@color/colorText"
-                    android:text="@string/lable_pet_detail_age"/>
+                    android:text="用户名"/>
                 <TextView
-                    android:id="@+id/text_pet_age"
+                    android:id="@+id/text_owner_username"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="7"
                     android:gravity="center|right"
-                    android:textSize="@dimen/pet_detail_value_size"
-                    android:text="@string/value_pet_default_age"/>
+                    android:textSize="@dimen/pet_detail_value_size"/>
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -80,15 +85,14 @@
                     android:gravity="center|left"
                     android:textSize="@dimen/pet_detail_lable_size"
                     android:textColor="@color/colorText"
-                    android:text="@string/lable_pet_detail_sex"/>
+                    android:text="密码"/>
                 <TextView
-                    android:id="@+id/text_pet_sex"
+                    android:id="@+id/text_owner_password"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="7"
                     android:gravity="center|right"
-                    android:textSize="@dimen/pet_detail_value_size"
-                    android:text="@string/value_pet_default_sex"/>
+                    android:textSize="@dimen/pet_detail_value_size" />
             </LinearLayout>
             <LinearLayout
                 android:orientation="horizontal"
@@ -103,150 +107,69 @@
                     android:gravity="center|left"
                     android:textSize="@dimen/pet_detail_lable_size"
                     android:textColor="@color/colorText"
-                    android:text="@string/lable_pet_detail_species"/>
+                    android:text="性别"/>
                 <TextView
-                    android:id="@+id/text_pet_species"
+                    android:id="@+id/text_owner_sex"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="7"
                     android:gravity="center|right"
-                    android:textSize="@dimen/pet_detail_value_size"
-                    android:text="@string/value_pet_default_species"/>
+                    android:textSize="@dimen/pet_detail_value_size" />
+            </LinearLayout>
+            <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/divider_detail_content_item_padding"
+            android:background="@color/colorWhite">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center|left"
+                android:textSize="@dimen/pet_detail_lable_size"
+                android:textColor="@color/colorText"
+                android:text="年龄"/>
+            <TextView
+                android:id="@+id/text_owner_age"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:gravity="center|right"
+                android:textSize="@dimen/pet_detail_value_size"/>
+        </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/divider_detail_content_item_padding"
+                android:background="@color/colorWhite">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center|left"
+                    android:textSize="@dimen/pet_detail_lable_size"
+                    android:textColor="@color/colorText"
+                    android:text="邮箱"/>
+                <TextView
+                    android:id="@+id/text_owner_email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:gravity="center|right"
+                    android:textSize="@dimen/pet_detail_value_size"/>
             </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+        <Button
+            android:id="@+id/owner_update_button"
+            style="?android:textAppearanceSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_detail_content_marginTop"
-            android:showDividers="middle"
-            android:divider="@drawable/dividerline"
-            android:dividerPadding="@dimen/divider_detail_content_item_padding">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/divider_detail_content_item_padding"
-            android:background="@color/colorWhite">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center|left"
-                android:textSize="@dimen/pet_detail_lable_size"
-                android:textColor="@color/colorText"
-                android:text="@string/lable_pet_detail_start"/>
-            <TextView
-                android:id="@+id/text_course_inst"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
-                android:gravity="center|right"
-                android:textSize="@dimen/pet_detail_value_size"
-                android:text="@string/value_pet_default_start"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/divider_detail_content_item_padding"
-            android:background="@color/colorWhite">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center|left"
-                android:textSize="@dimen/pet_detail_lable_size"
-                android:textColor="@color/colorText"
-                android:text="@string/lable_pet_detail_end"/>
-            <TextView
-                android:id="@+id/text_course_condition"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
-                android:gravity="center|right"
-                android:textSize="@dimen/pet_detail_value_size"
-                android:text="@string/value_pet_default_end"/>
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/divider_detail_content_item_padding"
-            android:background="@color/colorWhite">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center|left"
-                android:textSize="@dimen/pet_detail_lable_size"
-                android:textColor="@color/colorText"
-                android:text="@string/lable_pet_detail_course"/>
-            <TextView
-                android:id="@+id/text_course_duration"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="7"
-                android:gravity="center|right"
-                android:textSize="@dimen/pet_detail_value_size"
-                android:text="@string/value_pet_default_course"/>
-        </LinearLayout>
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/colorWhite"
+            android:text="保存"
+            android:textStyle="bold"/>
     </LinearLayout>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/item_detail_content_marginTop"
-            android:showDividers="middle"
-            android:divider="@drawable/dividerline"
-            android:dividerPadding="@dimen/divider_detail_content_item_padding">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/divider_detail_content_item_padding"
-                android:background="@color/colorWhite">
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:gravity="center|left"
-                    android:textSize="@dimen/pet_detail_lable_size"
-                    android:textColor="@color/colorText"
-                    android:text="@string/lable_pet_hr"/>
-                <TextView
-                    android:id="@+id/text_pet_hr"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="7"
-                    android:gravity="center|right"
-                    android:textSize="@dimen/pet_detail_value_size"
-                    android:text="@string/value_pet_default_hr"/>
-            </LinearLayout>
 
-        </LinearLayout>
-
-        <!--<LinearLayout-->
-            <!--android:orientation="vertical"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="@dimen/item_detail_content_marginTop"-->
-            <!--android:showDividers="middle"-->
-            <!--android:divider="@drawable/dividerline"-->
-            <!--android:dividerPadding="@dimen/divider_detail_content_item_padding">-->
-            <!--<Button-->
-                <!--android:id="@+id/action_delete"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_marginLeft="@dimen/button_delete_marginLR"-->
-                <!--android:layout_marginRight="@dimen/button_delete_marginLR"-->
-                <!--android:theme="@style/CustomButton"-->
-                <!--android:text="@string/button_delete_text"-->
-                <!--android:textColor="@color/colorWhite"-->
-                <!--android:textSize="@dimen/pet_detail_lable_size"-->
-                <!--android:elevation="@dimen/button_elevation"/>-->
-        <!--</LinearLayout>-->
-
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

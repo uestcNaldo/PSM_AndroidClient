@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -101,6 +102,7 @@ public class AttendanceDetailActivity extends BaseActivity {
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
                         String responseData = response.body().string();
+                        Log.d("onResponse: ", responseData);
                         Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
                         final List<Attendance> attendanceList = gson.fromJson(responseData, new TypeToken<List<Attendance>>(){}.getType());
                         mAttendanceList = attendanceList;
@@ -112,7 +114,9 @@ public class AttendanceDetailActivity extends BaseActivity {
                                 }
 
                                 for (Attendance attendance : attendanceList){
-                                    if (attendance.getDate() == Date.valueOf(DateUtils.getTodayDate())){
+                                    Log.d("run: getDate", attendance.getDate().toString());
+                                    Log.d("run: TodayDate", DateUtils.getTodayDate());
+                                    if (attendance.getDate().toString().equals(DateUtils.getTodayDate())){
                                         textView_AttendanceDate.setText(String.valueOf(attendance.getDate()));
                                         textView_AttendanceStatus.setText(attendance.getStatus());
                                     }

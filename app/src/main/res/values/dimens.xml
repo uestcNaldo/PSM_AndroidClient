@@ -17,7 +17,7 @@
 
     <dimen name="item_pet_margin">5dp</dimen>
     <dimen name="item_pet_name_size">24sp</dimen>
-    <dimen name="item_pet_other_size">14sp</dimen>
+    <dimen name="item_pet_other_size">12sp</dimen>
 
     <dimen name="cardview_item_elevation">4dp</dimen>
     <dimen name="item_cardview_margin">5dp</dimen>
@@ -68,7 +68,7 @@
     <dimen name="item_detail_content_marginTop">30dp</dimen>
     <dimen name="item_school_content_marginTop">10dp</dimen>
     <dimen name="pet_detail_content_item_marginTop">15dp</dimen>
-    <dimen name="divider_detail_content_item_padding">10dp</dimen>
+    <dimen name="divider_detail_content_item_padding">8dp</dimen>
     <dimen name="pet_detail_lable_size">20sp</dimen>
     <dimen name="pet_detail_value_size">18sp</dimen>
 

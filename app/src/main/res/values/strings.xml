@@ -3,7 +3,7 @@
 
     <!-- Strings of Title -->
     <string name="select_character_title">宠物学校管理演示</string>
-    <string name="owner_login_title">宠物主人登录注册</string>
+    <string name="owner_login_title">会员登录注册</string>
 
     <string name="title_owner_pet">宠物列表</string>
     <string name="title_owner_school">学校</string>
@@ -14,7 +14,7 @@
     <string name="school_name">四川家宝宠物服务有限公司</string>
     <string name="title_info">个人</string>
     <!-- Strings of Select Button -->
-    <string name="select_owner_button">宠物主人</string>
+    <string name="select_owner_button">会员</string>
     <string name="select_trainer_button">训练师</string>
     <string name="select_admin_button">管理员</string>
     <string name="select_activity_text">请选择一个身份</string>
@@ -200,6 +200,9 @@
     <string name="title_activity_attendance_trainer_list">AttendanceTrainerListActivity</string>
     <string name="title_activity_attendance_record">AttendanceRecordActivity</string>
     <string name="title_activity_attendance_detail">AttendanceDetailActivity</string>
-    <string name="title_activity_owner_register">宠物主人注册</string>
+    <string name="title_activity_owner_register">会员注册</string>
+    <string name="title_activity_owner_detail">OwnerDetailActivity</string>
+    <string name="title_activity_contact">ContactActivity</string>
+    <string name="title_activity_owner_notifi_list">OwnerNotifiListActivity</string>
 
 </resources>
